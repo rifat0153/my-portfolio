@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/Header";
+import HomeSection from "./components/HomeSection";
 import Layout from "./components/Layout";
 
 function App() {
+  const [activeSection, setactiveSection] = useState("");
+
   return (
     <div className="bg-body min-h-screen">
-      <Header />
+      <Header
+        activeSection="home"
+        setActiveSection={setactiveSection}
+      />
+      <HomeSection />
       <Layout>
-        <div className="text-2xl text-gray-200">Helloo</div>
+        <div className="text-2xl text-gray-200">{activeSection}</div>
       </Layout>
     </div>
   );
