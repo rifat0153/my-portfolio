@@ -12,6 +12,9 @@ module.exports = {
         "input-border": "#565666",
         input: "#2A2A35",
       },
+      height: {
+        home: "85vh",
+      },
       fontFamily: {
         poppins: ["'Poppins'", "sans-serif"],
       },

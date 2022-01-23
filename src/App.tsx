@@ -12,9 +12,11 @@ function App() {
         activeSection="home"
         setActiveSection={setactiveSection}
       />
-      <HomeSection />
       <Layout>
-        <div className="text-2xl text-gray-200">{activeSection}</div>
+        <div className="text-2xl text-gray-200">
+          {activeSection}
+          <HomeSection />
+        </div>
       </Layout>
     </div>
   );
