@@ -6,11 +6,11 @@ type Props = {};
 const HomeSection = (props: Props) => {
   return (
     <div
-      className="grid grid-cols-2  text-gray-100 items-center 
+      className="grid grid-cols-1 sm:grid-cols-2  text-gray-100 items-center 
                  h-home"
     >
       {/* 1st Column */}
-      <div className="text-3xl px-4 md:text-7xl font-extrabold">
+      <div className=" text-5xl px-4 md:text-7xl font-extrabold">
         <p>Building</p>
         <p>beautiful app experiences.</p>
       </div>

@@ -12,7 +12,7 @@ const Header = (props: Props) => {
                 text-gray-100 mx-auto max-w-7xl"
     >
       <div className="text-xl pl-4 md:pl-0 font-bold">
-        Mahbubur.Rahman
+        Mahbubur Rahman
       </div>
 
       <div
