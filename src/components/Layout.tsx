@@ -5,7 +5,7 @@ type Props = {
 };
 
 const Layout = (props: Props) => {
-  return <div className="mx-auto max-w-5xl">{props.children}</div>;
+  return <div className="mx-auto max-w-7xl">{props.children}</div>;
 };
 
 export default Layout;
