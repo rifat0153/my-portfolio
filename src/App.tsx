@@ -8,7 +8,7 @@ function App() {
   const [activeSection, setactiveSection] = useState("");
 
   return (
-    <div className="bg-body min-h-fit ">
+    <div className="bg-body min-h-fit font-poppins  ">
       <Header
         activeSection="home"
         setActiveSection={setactiveSection}

@@ -29,7 +29,7 @@ const SectionTitle: React.FC<{ title: String }> = (
       </p>
 
       {/* Project Showcase */}
-      <div className="my-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="my-6 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
         {porjectList.map((project) => (
           <div className="w-full h-56">
             <ProjectTile tech={project.tech} image={project.image} />
