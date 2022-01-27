@@ -9,10 +9,10 @@ const ProjectTile: React.FC<Project> = (
   props: Project
 ): JSX.Element => {
   return (
-    <div className="relative group w-full h-full  rounded-2xl overflow-hidden">
+    <div className="relative group w-full h-full  overflow-hidden">
       <img
         className="object-cover w-full h-full 
-                   group-hover:scale-125 transition-all duration-500 ease-in-out transform"
+                   group-hover:scale-125 transition-all duration-300 ease-in-out transform"
         src={props.image}
         alt={props.tech}
       />
@@ -20,14 +20,14 @@ const ProjectTile: React.FC<Project> = (
         className="absolute flex  w-full  invisible group-hover:visible
                  bg-white/30 justify-center items-center  
                    bottom-0 inset-x-0  text-center leading-4
-                   transition-all duration-500 ease-in-out transform
+                   
                    "
       >
         <p
           className="text-black font-extrabold text-2xl
                       invisible 
                       group-hover:visible
-                      group-hover:scale-x-90 duration-500 "
+                      group-hover:scale-x-90  "
         >
           {props.tech}
         </p>

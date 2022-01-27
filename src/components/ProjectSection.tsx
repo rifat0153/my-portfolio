@@ -31,7 +31,7 @@ const SectionTitle: React.FC<{ title: String }> = (
       {/* Project Showcase */}
       <div className="my-6 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
         {porjectList.map((project) => (
-          <div className="w-full h-56">
+          <div key={project.image} className="w-full h-64">
             <ProjectTile tech={project.tech} image={project.image} />
           </div>
         ))}
