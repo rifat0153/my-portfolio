@@ -9,16 +9,14 @@ const ProjectTile: React.FC<Project> = (
   props: Project
 ): JSX.Element => {
   return (
-    <div className="w-full h-full">
-      <div className="relative w-full h-full align-text-bottom">
-        <img
-          className="absolute z-0 max-h-56 w-full object-cover"
-          src={props.image}
-          alt={props.tech}
-        />
-        <p className="absolute z-10 text-4xl font-bold bg-blue-400">
-          {props.tech}
-        </p>
+    <div className="relative w-full h-full  overflow-hidden">
+      <img
+        className="object-cover w-full h-full"
+        src={props.image}
+        alt={props.tech}
+      />
+      <div className="absolute w-full py-3.5 bottom-0 inset-x-0 bg-white/30 text-black font-bold text-md text-center leading-4">
+        {props.tech}
       </div>
     </div>
   );
