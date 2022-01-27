@@ -17,12 +17,17 @@ const ProjectTile: React.FC<Project> = (
         alt={props.tech}
       />
       <div
-        className="absolute flex h-full w-full justify-center items-center  
-                   top-0 inset-x-0  text-center leading-4"
+        className="absolute flex  w-full  invisible group-hover:visible
+                 bg-white/30 justify-center items-center  
+                   bottom-0 inset-x-0  text-center leading-4
+                   transition-all duration-500 ease-in-out transform
+                   "
       >
         <p
-          className="text-white/50 drop-shadow-2xl shadow-orange-800 font-extrabold text-4xl 
-                      group-hover:scale-x-90 transition-all duration-500 ease-in-out transform"
+          className="text-black font-extrabold text-2xl
+                      invisible 
+                      group-hover:visible
+                      group-hover:scale-x-90 duration-500 "
         >
           {props.tech}
         </p>
