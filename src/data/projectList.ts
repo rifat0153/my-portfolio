@@ -1,4 +1,4 @@
-import { Project } from "./components/ProjectTile";
+import { Project } from "../components/ProjectTile";
 
 const projectList: Project[] = [
   {

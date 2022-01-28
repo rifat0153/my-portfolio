@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ClientSection from "./components/ClientSection";
 import Header from "./components/Header";
 import HomeSection from "./components/HomeSection";
 import Layout from "./components/Layout";
@@ -18,6 +19,7 @@ function App() {
           {activeSection}
           <HomeSection />
           <ProjectSection />
+          <ClientSection />
         </div>
       </Layout>
     </div>
