@@ -8,10 +8,10 @@ type Props = {
 const Header = (props: Props) => {
   return (
     <header
-      className="flex justify-between items-center py-8  
+      className="flex bg-body/95 fixed inset-x-0 z-50 justify-between items-center py-4  
                 text-gray-100 mx-auto max-w-7xl"
     >
-      <div className="text-xl pl-4 md:pl-0 font-bold">
+      <div className="text-lg  lg:text-xl pl-4 md:pl-0 font-bold">
         Mahbubur Rahman
       </div>
 

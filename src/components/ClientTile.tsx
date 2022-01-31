@@ -7,9 +7,13 @@ export interface Client {
   description: string;
 }
 
-const ClientTile = (props: { client: Client }) => {
+type _Props = {
+  client: Client;
+};
+
+const ClientTile: React.FC<_Props> = (props: _Props) => {
   return (
-    <div className="grid grid-cols-6 py-20 gap-4 w-full border-2 border-gray-700">
+    <div className="grid grid-cols-1 md:grid-cols-6 py-20 gap-4 w-full border-2 border-gray-700">
       {/* First Column */}
       <div className="col-span-2 flex justify-center items-center">
         <img
@@ -31,7 +35,7 @@ const ClientTile = (props: { client: Client }) => {
           ))}
         </div>
 
-        <p className="mt-4 text-xl text-slate-400">
+        <p className="mt-4 text-lg text-slate-400">
           {" "}
           {props.client.description}{" "}
         </p>

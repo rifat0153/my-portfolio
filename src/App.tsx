@@ -9,14 +9,14 @@ function App() {
   const [activeSection, setactiveSection] = useState("");
 
   return (
-    <div className="bg-body min-h-fit font-poppins selection:text-selected-text  ">
+    <div className="bg-body min-h-fit font-poppins selection:text-selected-text   ">
       <Header
         activeSection="home"
         setActiveSection={setactiveSection}
       />
       <Layout>
         <div className="text-2xl text-gray-200">
-          {activeSection}
+          {/* {activeSection} */}
           <HomeSection />
           <ProjectSection />
           <ClientSection />
