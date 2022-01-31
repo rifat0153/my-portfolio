@@ -11,7 +11,20 @@ const clientList: Client[] = [
   },
   {
     name: "Plan B Insights",
-    tags: ["Flutter", "NodeJS", "Docker", "Goggle Cloud"],
+    tags: [
+      "Flutter",
+      "NodeJS",
+      "Docker",
+      "Goggle Cloud",
+      "Flutter",
+      "NodeJS",
+      "Docker",
+      "Goggle Cloud",
+      "Flutter",
+      "NodeJS",
+      "Docker",
+      "Goggle Cloud",
+    ],
     description: `I have worked on the charity app Aalokito both on frontend and backend.`,
     image:
       "https://lh3.googleusercontent.com/FCxiPgt7bgEiLexJiSK3_d6ZBR68F-hhSkjKHSub9rO5ehbfw0Eqekiy9k0FQMu7WUJRVeUU0XB3R70f=w1080-h608-p-no-v0",

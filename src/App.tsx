@@ -9,7 +9,7 @@ function App() {
   const [activeSection, setactiveSection] = useState("");
 
   return (
-    <div className="bg-body min-h-fit font-poppins  ">
+    <div className="bg-body min-h-fit font-poppins selection:text-selected-text  ">
       <Header
         activeSection="home"
         setActiveSection={setactiveSection}
