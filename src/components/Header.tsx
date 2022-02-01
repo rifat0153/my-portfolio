@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { RiMenu3Line } from "react-icons/ri";
+import { BsArrowsAngleContract } from "react-icons/bs";
 
 type Props = {
   activeSection: string;
@@ -26,13 +28,17 @@ const Header = (props: Props) => {
           className="flex lg:hidden"
           onClick={() => setisOpen(!isOpen)}
         >
-          open
+          {isOpen ? (
+            <BsArrowsAngleContract />
+          ) : (
+            <RiMenu3Line color="bg-white" />
+          )}
         </button>
       </div>
 
       {/* Second Section */}
       <div
-        className={`flex flex-col w-full lg:w-1/3 items-start lg:items-center lg:flex-row 
+        className={`flex flex-col w-full p-4 lg:p-0 items-start lg:items-center lg:flex-row 
                     ${isOpen ? "" : "hidden lg:flex flex-col"}
                    justify-around 
                    font-xl`}
@@ -40,14 +46,13 @@ const Header = (props: Props) => {
         {navItems.map((item) => (
           <div
             onClick={() => props.setActiveSection(item)}
-            className="hover:underline hover:underline-offset-8 decoration-theme
-                        "
+            className="py-2 lg:py-0 hover:underline hover:underline-offset-8 decoration-theme"
           >
             {item}
           </div>
         ))}
         <div
-          className="bg-theme  hover:bg-theme/80 font-bold px-8 py-2  
+          className="mt-2 px-8 py-2 bg-theme  hover:bg-theme/80 font-bold 
                       rounded-sm"
           onClick={() => props.setActiveSection("hire")}
         >
