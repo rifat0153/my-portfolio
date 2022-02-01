@@ -12,7 +12,7 @@ const ProjectSection = (props: Props) => {
   );
 };
 
-const SectionTitle: React.FC<{ title: String }> = (
+const SectionTitle: React.FC<{ title: string }> = (
   props
 ): JSX.Element => {
   return (
