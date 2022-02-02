@@ -1,7 +1,15 @@
+import {
+  addDoc,
+  collection,
+  doc,
+  getDoc,
+  setDoc,
+  Timestamp,
+} from "@firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { db } from "../firebase-config";
 import Input from "./Input";
-
 type Props = {};
 
 const ContactSection = (props: Props) => {
@@ -9,10 +17,30 @@ const ContactSection = (props: Props) => {
   const [email, setemail] = useState("");
   const [message, setmessage] = useState("");
 
-  const handleSubmit = () => {
-    console.log(name);
-    console.log(email);
-    console.log(message);
+  const handleSubmit = async () => {
+    const messageColl = collection(db, "message");
+
+    const docRef = doc(messageColl, "/", email);
+    const docSnap = await getDoc(docRef);
+
+    // if (docSnap.exists()) {
+    //   console.log(docSnap.data);
+
+    //   alert("Your query is already with us");
+    // } else {
+    //   await setDoc(docRef, {
+    //     name,
+    //     email,
+    //     message,
+    //     createdAt: Timestamp.now(),
+    //   });
+    // }
+    await setDoc(docRef, {
+      name,
+      email,
+      message,
+      createdAt: Timestamp.now(),
+    });
   };
 
   function openInNewTab(url: string) {
