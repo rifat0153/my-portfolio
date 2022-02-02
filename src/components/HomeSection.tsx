@@ -10,7 +10,7 @@ const HomeSection = (props: Props) => {
                  h-home"
     >
       {/* 1st Column */}
-      <div className=" text-5xl px-4 md:text-7xl font-extrabold">
+      <div className=" text-5xl px-4 lg:px-24 md:text-7xl font-extrabold">
         <p>Building</p>
         <p>beautiful app experiences.</p>
       </div>

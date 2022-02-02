@@ -17,7 +17,7 @@ const Input: React.FC<Props> = (props: Props) => {
   ) : (
     <textarea
       className="bg-input w-full px-4 py-2 border-2 border-slate-700 rounded-sm focus:outline-none focus:ring 
-               focus:ring-violet-300"
+               focus:ring-violet-300 resize-none"
       value={props.value}
       rows={props.maxLines}
       draggable={false}
