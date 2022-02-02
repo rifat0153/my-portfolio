@@ -18,7 +18,7 @@ const ClientSection = (props: Props) => {
         implementing both frontend and backend.
       </p>
 
-      <div className="grid grid-cols-1 gap-4 ">
+      <div className="grid grid-cols-1 gap-4 lg:gap-12 ">
         {clients.map((client) => (
           <ClientTile client={client} />
         ))}

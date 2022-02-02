@@ -12,7 +12,7 @@ const ProjectTile: React.FC<Project> = (
     <div className="relative group w-full h-full  overflow-hidden">
       <img
         className="object-cover w-full h-full 
-                   group-hover:scale-125 transition-all duration-500 ease-in-out transform"
+                   group-hover:scale-110 transition-all duration-500 ease-in-out transform"
         src={props.image}
         alt={props.tech}
       />
