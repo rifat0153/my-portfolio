@@ -1,16 +1,23 @@
 import {
-  addDoc,
   collection,
   doc,
   getDoc,
   setDoc,
   Timestamp,
-} from "@firebase/firestore";
+} from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { db } from "../firebase-config";
 import Input from "./Input";
+
 type Props = {};
+
+interface Query {
+  name: string;
+  email: string;
+  message: string;
+  status: "pending" | "approved";
+}
 
 const ContactSection = (props: Props) => {
   const [name, setname] = useState("");
@@ -18,29 +25,29 @@ const ContactSection = (props: Props) => {
   const [message, setmessage] = useState("");
 
   const handleSubmit = async () => {
-    const messageColl = collection(db, "message");
+    const messageColl = collection(db, "messages");
 
     const docRef = doc(messageColl, "/", email);
     const docSnap = await getDoc(docRef);
 
-    // if (docSnap.exists()) {
-    //   console.log(docSnap.data);
+    const data = docSnap.data() as Query | undefined;
 
-    //   alert("Your query is already with us");
-    // } else {
-    //   await setDoc(docRef, {
-    //     name,
-    //     email,
-    //     message,
-    //     createdAt: Timestamp.now(),
-    //   });
-    // }
-    await setDoc(docRef, {
-      name,
-      email,
-      message,
-      createdAt: Timestamp.now(),
-    });
+    if (docSnap.exists() && data?.status === "pending") {
+      alert("Your query is already registered");
+    } else {
+      await setDoc(docRef, {
+        name,
+        email,
+        message,
+        status: "pending",
+        createdAt: Timestamp.now(),
+      });
+      alert("Your message is received");
+    }
+
+    setname("");
+    setemail("");
+    setmessage("");
   };
 
   function openInNewTab(url: string) {
