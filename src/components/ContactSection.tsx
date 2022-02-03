@@ -8,6 +8,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { db } from "../firebase-config";
+import { openInNewTab } from "../utils/url_helper";
 import Input from "./Input";
 
 type Props = {};
@@ -49,10 +50,6 @@ const ContactSection = (props: Props) => {
     setemail("");
     setmessage("");
   };
-
-  function openInNewTab(url: string) {
-    window.open(url, "_blank")?.focus();
-  }
 
   useEffect(() => {
     console.log(name);
