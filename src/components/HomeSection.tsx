@@ -3,6 +3,7 @@ import { FiEye } from "react-icons/fi";
 import AppImage from "../assets/app-dev-1.png";
 import { openInNewTab } from "../utils/url_helper";
 
+
 type Props = {};
 
 const HomeSection = (props: Props) => {

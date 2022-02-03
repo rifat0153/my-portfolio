@@ -1,9 +1,9 @@
 import React from "react";
 
-export interface Project {
+export type Project = {
   tech: string;
   image: string;
-}
+};
 
 const ProjectTile: React.FC<Project> = (
   props: Project
