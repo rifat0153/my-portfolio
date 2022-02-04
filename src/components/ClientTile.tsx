@@ -13,11 +13,11 @@ type _Props = {
 
 const ClientTile: React.FC<_Props> = (props: _Props) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-6 py-20 gap-4 w-full border-2 border-gray-700">
+    <div className="grid w-full grid-cols-1 gap-4 border-2 border-gray-700 py-20 md:grid-cols-6">
       {/* First Column */}
-      <div className="col-span-2 flex justify-center items-center">
+      <div className="col-span-2 flex items-center justify-center">
         <img
-          className="object-cover h-[100px] w-[100px]  rounded-full "
+          className="h-[100px] w-[100px] rounded-full  object-cover "
           src={props.client.image}
           alt={props.client.description}
         />
@@ -29,7 +29,7 @@ const ClientTile: React.FC<_Props> = (props: _Props) => {
 
         <div className="flex flex-wrap py-4">
           {props.client.tags.map((tag) => (
-            <p className="py-1 px-4 mb-2 mr-2 gap-2 bg-badge text-sm rounded-sm">
+            <p className="mb-2 mr-2 gap-2 rounded-sm bg-badge py-1 px-4 text-sm">
               {tag}
             </p>
           ))}

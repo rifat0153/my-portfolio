@@ -4,7 +4,7 @@ import Tds from "../assets/tds.png";
 
 const projectList: Project[] = [
   {
-    tech: "React",
+    tech: "Flutter",
     image: Aalokito,
   },
   {

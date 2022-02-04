@@ -5,27 +5,25 @@ export type Project = {
   image: string;
 };
 
-const ProjectTile: React.FC<Project> = (
-  props: Project
-): JSX.Element => {
+const ProjectTile: React.FC<Project> = (props: Project): JSX.Element => {
   return (
-    <div className="relative group w-full h-full  overflow-hidden">
+    <div className="group relative h-full w-full  overflow-hidden">
       <img
-        className="object-cover w-full h-full 
-                   group-hover:scale-110 transition-all duration-500 ease-in-out transform"
+        className="h-full w-full transform 
+                   object-cover transition-all duration-500 ease-in-out group-hover:scale-110"
         src={props.image}
         alt={props.tech}
       />
       <div
-        className="absolute flex  w-full  invisible group-hover:visible
-                 bg-white/30 justify-center items-center  
-                   bottom-0 inset-x-0  text-center leading-4
+        className="invisible absolute  inset-x-0  bottom-0 flex
+                 w-full items-center justify-center  
+                   bg-white/30 text-center  leading-4 group-hover:visible
                    
                    "
       >
         <p
-          className="text-black font-extrabold text-2xl
-                      invisible duration-500
+          className="invisible text-2xl font-extrabold
+                      text-black duration-500
                       group-hover:visible
                       group-hover:scale-x-90  "
         >

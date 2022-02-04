@@ -9,15 +9,15 @@ interface Props {
 const Input: React.FC<Props> = (props: Props) => {
   return props.maxLines === 1 ? (
     <input
-      className="bg-input w-full px-4 py-2 border-2 border-slate-700 rounded-md focus:outline-none focus:ring 
+      className="w-full rounded-md border-2 border-slate-700 bg-input px-4 py-2 focus:outline-none focus:ring 
                  focus:ring-violet-300"
       value={props.value}
       onChange={(e) => props.onChange(e.target.value)}
     />
   ) : (
     <textarea
-      className="bg-input w-full px-4 py-2 border-2 border-slate-700 rounded-md focus:outline-none focus:ring 
-               focus:ring-violet-300 resize-none"
+      className="w-full resize-none rounded-md border-2 border-slate-700 bg-input px-4 py-2 focus:outline-none 
+               focus:ring focus:ring-violet-300"
       value={props.value}
       rows={props.maxLines}
       draggable={false}

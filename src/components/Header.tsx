@@ -14,23 +14,20 @@ const Header = (props: Props) => {
 
   return (
     <header
-      className="flex py-4 px-4 flex-col lg:flex-row 
-                 items-baseline lg:items-center bg-body/95 fixed 
-                 inset-x-0 z-50 justify-between   
-                text-gray-100 mx-auto max-w-7xl
+      className="fixed inset-x-0 z-50 mx-auto flex 
+                 max-w-7xl flex-col items-baseline justify-between 
+                 bg-body/95 py-4 px-4   
+                text-gray-100 lg:flex-row lg:items-center
                  
                 "
     >
       {/* First Section */}
       <div
-        className="text-lg flex w-full  justify-between  lg:text-xl pl-4 md:pl-0 
-                      font-bold transition-all duration-500 ease-in-out transform"
+        className="flex w-full transform  justify-between  pl-4 text-lg font-bold 
+                      transition-all duration-500 ease-in-out md:pl-0 lg:text-xl"
       >
         <div>Mahbubur Rahman</div>
-        <button
-          className="flex lg:hidden"
-          onClick={() => setisOpen(!isOpen)}
-        >
+        <button className="flex lg:hidden" onClick={() => setisOpen(!isOpen)}>
           {isOpen ? (
             <BsArrowsAngleContract />
           ) : (
@@ -41,22 +38,22 @@ const Header = (props: Props) => {
 
       {/* Second Section */}
       <div
-        className={`flex flex-col px-4 lg:px-0 w-full items-start lg:items-center lg:flex-row 
-                    ${isOpen ? "" : "hidden lg:flex flex-col"}
-                   justify-around 
-                   font-xl`}
+        className={`flex w-full flex-col items-start px-4 lg:flex-row lg:items-center lg:px-0 
+                    ${isOpen ? "" : "hidden flex-col lg:flex"}
+                   font-xl 
+                   justify-around`}
       >
         {navItems.map((item) => (
           <div
             onClick={() => props.setActiveSection(item)}
-            className="py-2 mr-0 lg:mr-4 lg:py-0 hover:underline hover:underline-offset-8 decoration-theme"
+            className="mr-0 py-2 decoration-theme hover:underline hover:underline-offset-8 lg:mr-4 lg:py-0"
           >
             {item}
           </div>
         ))}
         <div
-          className="bg-theme  hover:bg-theme/80 font-bold px-8 py-2  
-                      rounded-sm"
+          className="rounded-sm  bg-theme px-8 py-2 font-bold  
+                      hover:bg-theme/80"
           onClick={() => props.setActiveSection("hire")}
         >
           Hire me
