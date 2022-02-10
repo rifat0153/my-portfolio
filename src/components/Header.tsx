@@ -5,18 +5,19 @@ import { BsArrowsAngleContract } from "react-icons/bs";
 type Props = {
   activeSection: string;
   setActiveSection: React.Dispatch<React.SetStateAction<string>>;
+  scrollTo: (sectionName: string) => void;
 };
 
-const navItems: string[] = ["Home", "My Work", "Clients"];
+export const navItems: string[] = ["Home", "My Work", "Clients"];
 
 const Header = (props: Props) => {
   const [isOpen, setisOpen] = useState<boolean>(false);
 
   return (
     <header
-      className="fixed inset-x-0 z-50 mx-auto flex 
-                 max-w-7xl flex-col items-baseline justify-between 
-                 bg-body/95 py-4 px-4   
+      className="bg-body/95 fixed inset-x-0 z-50 mx-auto 
+                 flex max-w-7xl flex-col items-baseline 
+                 justify-between py-4 px-4   
                 text-gray-100 lg:flex-row lg:items-center
                  
                 "
@@ -27,7 +28,10 @@ const Header = (props: Props) => {
                       transition-all duration-500 ease-in-out md:pl-0 lg:text-xl"
       >
         <div>Mahbubur Rahman</div>
-        <button className="flex lg:hidden" onClick={() => setisOpen(!isOpen)}>
+        <button
+          className="flex lg:hidden"
+          onClick={() => setisOpen(!isOpen)}
+        >
           {isOpen ? (
             <BsArrowsAngleContract />
           ) : (
@@ -45,16 +49,22 @@ const Header = (props: Props) => {
       >
         {navItems.map((item) => (
           <div
-            onClick={() => props.setActiveSection(item)}
-            className="mr-0 py-2 decoration-theme hover:underline hover:underline-offset-8 lg:mr-4 lg:py-0"
+            onClick={() => {
+              props.setActiveSection(item);
+              props.scrollTo(item);
+            }}
+            className="decoration-theme mr-0 py-2 hover:underline hover:underline-offset-8 lg:mr-4 lg:py-0"
           >
             {item}
           </div>
         ))}
         <div
-          className="rounded-sm  bg-theme px-8 py-2 font-bold  
-                      hover:bg-theme/80"
-          onClick={() => props.setActiveSection("hire")}
+          className="bg-theme  hover:bg-theme/80 rounded-sm px-8 py-2  
+                      font-bold"
+          onClick={() => {
+            props.setActiveSection("hire");
+            props.scrollTo("contact");
+          }}
         >
           Hire me
         </div>

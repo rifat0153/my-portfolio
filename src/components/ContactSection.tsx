@@ -1,4 +1,10 @@
-import { collection, doc, getDoc, setDoc, Timestamp } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDoc,
+  setDoc,
+  Timestamp,
+} from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { db } from "../firebase-config";
@@ -51,10 +57,10 @@ const ContactSection = (props: Props) => {
 
   return (
     <div className="mt-10 p-4 pb-12 md:mt-20">
-      <div className="h-2 w-12 rounded-3xl bg-theme"></div>
+      <div className="bg-theme h-2 w-12 rounded-3xl"></div>
       <p className="py-1 text-3xl font-bold">Hire me</p>
 
-      <div className="grid grid-cols-1 pt-24 pb-8 text-slate-100 lg:grid-cols-2">
+      <div className="grid grid-cols-1 pt-10 pb-8 text-slate-100 lg:grid-cols-2">
         {/* First Col */}
         <div className="">
           <div className="mb-10 text-xl font-bold">
@@ -69,11 +75,15 @@ const ContactSection = (props: Props) => {
 
           <div className="mt-4 mb-0 text-xl font-bold">
             <p className="mb-4">Message</p>
-            <Input value={message} onChange={setmessage} maxLines={4} />
+            <Input
+              value={message}
+              onChange={setmessage}
+              maxLines={4}
+            />
           </div>
 
           <button
-            className="my-2 bg-theme px-6 py-2 text-lg font-bold lg:my-6"
+            className="bg-theme my-2 px-6 py-2 text-lg font-bold lg:my-6"
             onClick={handleSubmit}
           >
             Send it
@@ -81,7 +91,7 @@ const ContactSection = (props: Props) => {
         </div>
 
         {/* Second Col */}
-        <div className="px-2 py-10 text-lg text-secondary lg:px-24">
+        <div className="text-secondary px-2 py-10 text-lg lg:px-24">
           <p className="">+4474380-75886</p>
           <p className="mt-2 underline">rifat0153@gmail.com</p>
 
@@ -89,7 +99,9 @@ const ContactSection = (props: Props) => {
             <FaGithub
               className="h-10 w-10 transform duration-300 ease-in-out hover:scale-110"
               color="white"
-              onClick={() => openInNewTab("https://github.com/rifat0153")}
+              onClick={() =>
+                openInNewTab("https://github.com/rifat0153")
+              }
             />
             <FaLinkedin
               className="h-10 w-10 transform duration-300 ease-in-out hover:scale-110"
