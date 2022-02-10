@@ -5,7 +5,9 @@ export type Project = {
   image: string;
 };
 
-const ProjectTile: React.FC<Project> = (props: Project): JSX.Element => {
+const ProjectTile: React.FC<Project> = (
+  props: Project
+): JSX.Element => {
   return (
     <div className="group relative h-full w-full  overflow-hidden">
       <img

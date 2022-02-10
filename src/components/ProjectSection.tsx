@@ -12,14 +12,17 @@ const ProjectSection = (props: Props) => {
   );
 };
 
-const SectionTitle: React.FC<{ title: string }> = (props): JSX.Element => {
+const SectionTitle: React.FC<{ title: string }> = (
+  props
+): JSX.Element => {
   return (
     <div>
       {/* Title and SubTitle */}
-      <div className="h-2 w-12 rounded-3xl bg-theme"></div>
+      <div className="bg-theme h-2 w-12 rounded-3xl"></div>
       <p className="py-1 text-3xl font-bold">My Work</p>
       <p className="mt-4 text-xl text-slate-400">
-        I’ve had the pleasure of working with multiple companies, designing and
+        I’ve had the pleasure of working with multiple companies,
+        designing and
       </p>
       <p className="mb-8 text-xl  text-slate-400">
         implementing both frontend and backend.
