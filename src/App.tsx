@@ -36,6 +36,9 @@ function App() {
         contactSectionRef.current?.scrollIntoView({
           behavior: "smooth",
         });
+        contactSectionRef.current?.scrollBy({
+          top: 30,
+        });
         return;
       default:
         homeSectionRef.current?.scrollIntoView({
