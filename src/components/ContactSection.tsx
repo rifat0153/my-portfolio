@@ -28,6 +28,7 @@ const ContactSection = (props: Props) => {
   const handleSubmit = async () => {
     if (!name || !email || !message) {
       alert("Please complete the form before submitting");
+      return;
     }
 
     const messageColl = collection(db, "messages");
@@ -37,6 +38,7 @@ const ContactSection = (props: Props) => {
 
     if (docSnap.exists() && data?.status === "pending") {
       alert("Your query is already registered");
+      return;
     }
 
     await setDoc(docRef, {
