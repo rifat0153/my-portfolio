@@ -1,6 +1,6 @@
 import { Project } from "../components/ProjectTile";
 import Aalokito from "../assets/aalokito.png";
-import Tds from "../assets/tds.png";
+import Tds from "../assets/mobile.png";
 
 const projectList: Project[] = [
   {

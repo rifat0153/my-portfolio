@@ -26,25 +26,27 @@ const ContactSection = (props: Props) => {
   const [message, setmessage] = useState("");
 
   const handleSubmit = async () => {
-    const messageColl = collection(db, "messages");
+    if (!name || !email || !message) {
+      alert("Please complete the form before submitting");
+    }
 
+    const messageColl = collection(db, "messages");
     const docRef = doc(messageColl, "/", email);
     const docSnap = await getDoc(docRef);
-
     const data = docSnap.data() as Query | undefined;
 
     if (docSnap.exists() && data?.status === "pending") {
       alert("Your query is already registered");
-    } else {
-      await setDoc(docRef, {
-        name,
-        email,
-        message,
-        status: "pending",
-        createdAt: Timestamp.now(),
-      });
-      alert("Your message is received");
     }
+
+    await setDoc(docRef, {
+      name,
+      email,
+      message,
+      status: "pending",
+      createdAt: Timestamp.now(),
+    });
+    alert("Your message is received");
 
     setname("");
     setemail("");
